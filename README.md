@@ -14,7 +14,7 @@ DEPENDENCIES:
 - ffmpeg (  1) sudo add-apt-repository ppa:djcj/vlc-stable
             2) sudo apt-get update
             3) sudo apt-get upgrade
-            4) sudo apt-get install ffmpeg  
-          )
-  - ffmpeg libmp3lame library needed to convert to mp3 ( "sudo apt-get install ffmpeg libavcodec-extra-53" OR "sudo apt-get install ffmpeg libavcodec-extra-52")
+            4) sudo apt-get install ffmpeg  )
+
+- ffmpeg libmp3lame library needed to convert to mp3 ( "sudo apt-get install ffmpeg libavcodec-extra-53" OR "sudo apt-get install ffmpeg libavcodec-extra-52")
 
