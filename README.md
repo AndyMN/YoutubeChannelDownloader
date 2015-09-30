@@ -9,7 +9,7 @@ This was created to download entire EDM music channels on Youtube for example: M
 DEPENDENCIES:
 
 - requests  (pip install requests OR easy_install requests)
-- pytube (download zip at: https://github.com/NFicano/pytube then "sudo python setup.py install"
+- pytube (download zip at: https://github.com/NFicano/pytube then "sudo python setup.py install" OR pip install pytube
 - python-video-converter (download zip at: https://github.com/senko/python-video-converter then "sudo python setup.py install"
 - ffmpeg (  1) sudo add-apt-repository ppa:djcj/vlc-stable
             2) sudo apt-get update
