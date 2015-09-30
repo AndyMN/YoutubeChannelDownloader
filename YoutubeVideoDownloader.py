@@ -13,17 +13,19 @@ class YoutubeVideoDownloader:
 
         try:
             youtube_url ="https://www.youtube.com/watch?v=%s" % video_id
-            self.youtube.url = youtube_url
-            youtube_video = self.youtube.get(video_quality)
+            self.youtube.from_url(youtube_url)
+            youtube_video = self.youtube.filter(video_quality)[-1]
             video_name = self.youtube.filename
             filename = video_name + ".%s" % video_quality
             if not glob.glob(directory + video_name + ".*"): #Check to see if the file was already downloaded or not
+                print "Downloading: %s" % filename
                 youtube_video.download(directory)
                 return filename
             else:
                 print "Already downloaded: %s" % filename
                 return filename
-        except:
-            print "Failed to download: %s" % filename
+        except Exception as e:
+            print str(e)
+            print "Failed to download: %s" % youtube_url
             return "NULL"
             pass

@@ -18,7 +18,8 @@ class VideoConverter:
         converted_filename = filename.split(".")[0] + ".%s" % self.codec
         if not glob.glob(conversion_dir + converted_filename): #Check to see if the file was already converted or not
             print "Converting %s" % filename
-            conv = self.converter.convert(file_dir + filename, conversion_dir + converted_filename, {"format": self.codec,
+            try:
+                conv = self.converter.convert(file_dir + filename, conversion_dir + converted_filename, {"format": self.codec,
                                                                                 "audio": {
                                                                                     "codec": self.codec,
                                                                                     "bitrate": self.bitrate,
@@ -26,9 +27,11 @@ class VideoConverter:
                                                                                     "channels": self.channels
                                                                                 }
                                                                                 })
-            for timecode in conv:
-                pass
-            return 0
+                for timecode in conv:
+                    pass
+                return 0
+            except Exception as e:
+                print str(e)
         else:
             print "Already converted: %s" % converted_filename
             return 1
